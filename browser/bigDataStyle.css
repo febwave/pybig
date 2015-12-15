@@ -1,0 +1,66 @@
+
+table.lists{
+    border-collapse:collapse;
+}
+
+table.lists tr td {
+    border-width: 1px;
+    border-style: solid;
+    border-color : #000;
+
+}
+
+
+div#resultListRegion {
+
+    height:200px;
+    width:100%;
+    float:left;
+}
+
+div#chartRegion {
+
+    height:500px;
+    width:100%;
+    float:bottom;
+    text-align:center;
+}
+
+p#lbLoginText {
+    height: 30px;
+    width: 50%;
+}
+
+#cbType{
+    width: 90px;
+}
+
+#cbKey{
+    width: 90px;
+}
+
+
+input#debugOutput{
+    width: 826px;
+    height: 49px;
+}
+
+tr.tr_tbSecInfo {
+    color: cornflowerblue;
+    text-align: center;
+    width:100%;
+}
+#myChart {
+    width: 100%;
+    height: 300px;
+}
+
+
+#debugOutput{
+    vertical-align:top;
+}
+.lyTableColumn{
+    text-align: center;
+}
+
+

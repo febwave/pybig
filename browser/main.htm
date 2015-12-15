@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title>bigData web access</title>
+
+	<link rel="stylesheet" type="text/css" href="bigDataStyle.css" />
+	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+	<script src="js/table.js" type="text/javascript"></script>
+	<script src="js/chart/Chart.min.js"type="text/javascript"></script>
+	<script src="js/mainImpl.js" type="text/javascript"></script>
+    <script src="js/SecDailyApi.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript">
+	    $(document).ready(function () {
+
+	        mainImpl.doOnLoad("http://localhost:8000/DEMOService/");
+
+	        $("#btnSearch").click(function () {
+	            mainImpl.OnSearch($("#txtFilter").val());
+	        });
+	        $("#btnFirst").click(function () {
+	            mainImpl.OnSearchFirst();
+	        });
+	        $("#btnPrev").click(function () {
+	            mainImpl.OnSearchPrev();
+	        });
+	        $("#btnNext").click(function () {
+	            mainImpl.OnSearchNext();
+	        });
+	        $("#btnLast").click(function () {
+	            mainImpl.OnSearchLast();
+	        });
+
+	        $("#myChart").resize(function () {
+	            $("#chartRegion").height($("#myChart").height());
+	        });
+	    });
+	</script>
+    <style type="text/css">
+        #btnClear
+        {
+            width: 60px;
+        }      
+    </style>
+</head>
+<body>
+<table class=".lyAccount">
+	<tr>
+		<td>Keyword:</td>
+		<td><input type="text" id="txtFilter"/></td>
+		<td><input type="button" id="btnSearch" value="Search"/></td>
+		<td><input type="button" id="btnClear" value="Clear"/></td>
+	</tr>
+	<tr>
+	</tr>
+</table>
+
+
+<table class=".lyOutput">
+	<tr>
+		<td>Output:</td>
+	</tr>
+	<tr>
+		<td><input id="debugOutput" type="text" value=""/></td>
+	</tr>
+	<tr>
+		<td>Result:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" id="btnFirst" value="First"/><input type="button" 
+                id="btnNext" value="Next"/><input type="button" id="btnPrev" 
+                value="Prev"/><input type="button" id="btnLast" value="Last"/>
+                <select id="interval">    
+                    <option value= "30" >30</option> 
+                    <option value= "60" >60</option>                    
+                   <option value= "15" >15</option> 
+                   
+                  
+                    
+                   </select></td>
+	</tr>
+</table>
+<div id = "resultListRegion">	
+</div>
+<div id = "chartRegion">
+    <canvas id="myChart" ></canvas>
+</div>
+
+</body>
+
+</html>
